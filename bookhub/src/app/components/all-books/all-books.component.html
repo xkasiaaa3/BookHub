@@ -1,0 +1,5 @@
+
+<div *ngFor="let item of items$ | filterTitle:filterTitle | filterAuthor:filterAuthor">
+  <book-item [cover]="item.cover" [author]="item.author" [title]="item.title" [description]="item.description" [id]="item.id">
+  </book-item>
+</div>

@@ -1,0 +1,22 @@
+.card{
+  width:30rem;
+  flex-direction: row;
+}
+
+/*.card:hover{*/
+/*  visibility: revert;*/
+/*}*/
+/*.card:hover{*/
+/*  width:20rem;*/
+/*}*/
+
+/*.card-body{*/
+/*  visibility:hidden;*/
+/*}*/
+/*.card:hover .card-body{*/
+/*  visibility:visible;*/
+/*}*/
+
+
+
+

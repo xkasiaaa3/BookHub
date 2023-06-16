@@ -1,0 +1,8 @@
+<div class="card" style="margin: 1rem" >
+  <a [routerLink]="['/book/detail/'+id]"><book-cover [cover]="cover"></book-cover></a>
+  <div class = "card-body">
+    <book-author [author]="author"></book-author>
+    <book-title [title]="title"></book-title>
+   <book-description [description]="description"></book-description>
+  </div>
+</div>
