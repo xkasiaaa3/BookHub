@@ -8,7 +8,7 @@ import { BookItemComponent } from './components/book-item/book-item.component';
 import { BookCoverComponent } from './components/book-cover/book-cover.component';
 import { BookTitleComponent } from './components/book-title/book-title.component';
 import { BookAuthorComponent } from './components/book-author/book-author.component';
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {DataService} from "./services/data.service";
 import { BookDetailsComponent } from './components/book-details/book-details.component';
 import { BookDescriptionComponent } from './components/book-description/book-description.component';
@@ -20,6 +20,17 @@ import { FilterTitlePipe } from './pipes/filter-title.pipe';
 import { FilterAuthorPipe } from './pipes/filter-author.pipe';
 import { SearchBarAuthorComponent } from './shared/search-bar-author/search-bar-author.component';
 import { TextToLowerCaseDirective } from './directives/text-to-lower-case.directive';
+import { HomeComponent } from './components/home/home.component';
+import {AuthService} from "./services/auth.service";
+import {AuthInterceptor} from "./services/auth.interceptor";
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { AddBookComponent } from './components/add-book/add-book.component';
+import { BookGenresComponent } from './components/book-genres/book-genres.component';
+import { BookCoverBigComponent } from './components/book-cover-big/book-cover-big.component';
+import { BookGenresBigComponent } from './components/book-genres-big/book-genres-big.component';
+import { EditBookComponent } from './components/edit-book/edit-book.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +49,15 @@ import { TextToLowerCaseDirective } from './directives/text-to-lower-case.direct
     FilterAuthorPipe,
     SearchBarAuthorComponent,
     TextToLowerCaseDirective,
+    HomeComponent,
+    LoginComponent,
+    SignupComponent,
+    NavbarComponent,
+    AddBookComponent,
+    BookGenresComponent,
+    BookCoverBigComponent,
+    BookGenresBigComponent,
+    EditBookComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +65,12 @@ import { TextToLowerCaseDirective } from './directives/text-to-lower-case.direct
     HttpClientModule,
     FormsModule
   ],
-  providers: [DataService],
+  providers: [DataService, AuthService,    {
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

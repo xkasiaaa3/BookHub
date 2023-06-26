@@ -1,0 +1,24 @@
+
+.margin{
+  margin:10px;
+  width:400px;
+}
+
+
+
+.label{
+  font-size:20px;
+  font-weight: bold;
+  color: #1a1433;
+  margin:5px;
+}
+
+.title{
+  align-self: center;
+  justify-self:center;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color:#1a1433;
+  margin-bottom:20px;
+}

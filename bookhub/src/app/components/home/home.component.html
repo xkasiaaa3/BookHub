@@ -1,0 +1,16 @@
+<div style="background-color: #c9ec5f;min-height:100vh;justify-content: center;align-items: center">
+
+  <h1 style="text-align: center; padding:20px;">Ostatnio dodane</h1>
+  <div style="flex-wrap: wrap; display: flex; flex-direction: row;justify-content: center;align-items: center">
+       <div *ngFor="let item of lastThree">
+    <book-item [cover]="item.cover" [genres]="item.genres" [author]="item.author" [title]="item.title" [description]="item.description" [id]="item.id">
+    </book-item>
+  </div></div>
+  <h1 style="text-align: center; padding:20px;">Najczęściej czytane</h1>
+  <div style="flex-wrap: wrap; display: flex; flex-direction: row;justify-content: center;align-items: center">
+    <div *ngFor="let item of bestThree">
+      <book-item [cover]="item.cover" [genres]="item.genres" [author]="item.author" [title]="item.title" [description]="item.description" [id]="item.id">
+      </book-item>
+    </div></div>
+
+</div>

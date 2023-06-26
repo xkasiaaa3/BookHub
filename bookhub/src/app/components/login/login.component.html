@@ -1,0 +1,24 @@
+<div style="background-color: #c9ec5f; height:100vh; align-items: center;padding-top:5rem;display: flex;flex-direction: column">
+  <h1 class="entry-title"><span>Logowanie</span></h1><hr>
+  <form action="post" autocomplete="off" method="POST">
+    <div class="input-group-lg margin">
+      <label class="label">Login:</label>
+    </div>
+    <div class="input-group margin">
+
+      <input [(ngModel)]="credentials.login" type="text" class="form-control"
+             name="username" placeholder="Login" title="Login">
+    </div>
+    <div class="input-group-lg margin">
+      <label class="label">Hasło:</label>
+    </div>
+    <div class="input-group margin">
+      <input [(ngModel)]="credentials.password" type="password" class="form-control"
+             name="password" placeholder="Hasło" title="Password">
+    </div>
+
+    <button (click)="signIn()" class="rounded-button" type="submit" title="Przycisk zaloguj">
+      Zaloguj się
+    </button>
+  </form>
+</div>

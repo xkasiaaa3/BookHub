@@ -16,9 +16,15 @@ getAll() {
 }
 
   getById(id: string) {
-    return this.http.get(this.url + '/api/books/' + id);
+    return this.http.get(this.url + '/api/book/' + id);
   }
 
+  createOrUpdate(book: any) {
+      return this.http.post(this.url + '/api/book',book);
+  }
 
+  deleteById(id: string) {
+    return this.http.delete(this.url + '/api/book/' + id);
+  }
 }
 

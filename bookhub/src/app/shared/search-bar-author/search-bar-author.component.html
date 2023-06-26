@@ -1,2 +1,4 @@
-<input [(ngModel)]="filterText" (ngModelChange)="sendFilter()"
-       placeholder="Wpisz autora..." id="search" type="search" class="form-control" textToLowerCase>
+<!--<input [(ngModel)]="filterText" (ngModelChange)="sendFilter()"-->
+<!--       placeholder="Wpisz autora..." id="search" type="search" class="form-control" textToLowerCase>-->
+
+<input type="text" placeholder="Wpisz autora..." (input)="onAuthorChange($event)"class="form-control" textToLowerCase>

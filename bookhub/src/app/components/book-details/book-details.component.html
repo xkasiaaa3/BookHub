@@ -1,1 +1,41 @@
-<p>book-details works!</p>
+<div style="flex-direction: row;display: flex;background-color: #c9ec5f;min-height:100vh;padding: 30px;justify-content: center;">
+<book-cover-big [cover]="cover"></book-cover-big>
+<div style="width:80%;  height:40rem;margin:10px;background-color: #d6ec93;padding:30px" class="card">
+  <div style="
+  text-align: center;
+  font-size: 20px;
+  color:#1a1433;">{{author}}</div>
+
+  <div style="
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+  color:#1a1433;
+">{{title}}</div>
+
+
+<div style="
+  font-size: 16px;
+  color:#1a1433;
+margin:20px;">{{description}}</div>
+
+  <div style="
+margin-left:20px;">
+  <book-genres-big [genres]="genres"></book-genres-big>
+
+  </div>
+
+  <div style="
+  font-size: 20px;
+  color:#1a1433;
+font-weight: bold;
+margin:20px;">Czytelnicy: {{readBy.length}}</div>
+
+    <div *ngIf="authService.isLoggedIn()">
+    <button class="rounded-button" *ngIf="!ifReadByMe()" (click)="addReader()">Oznacz jako przeczytana</button>
+      <p class="rounded-button-blank" *ngIf="ifReadByMe()"> Oznaczona jako przeczytana</p>
+
+      <button [routerLink]="['/book/edit/'+id]" class="rounded-button" >Edytuj</button>
+  </div>
+</div></div>
+

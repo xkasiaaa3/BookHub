@@ -11,6 +11,7 @@ export class BookItemComponent implements OnInit{
   @Input() author?: string;
   @Input() description?: string;
   @Input() id?: string;
+  @Input() genres?: Array<string>;
 
   ngOnInit(): void {
   }

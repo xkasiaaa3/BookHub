@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand">
+  <div class="container-fluid" style="background-color: #d6ec93">
+    <a class="nav-link active title" aria-current="page" href="#" [routerLink]="['/']">BookHub</a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item" >
+
+          <a class="rounded-button" href="#" [routerLink]="['/books']">Wszystkie książki</a>
+        </li>
+        <li class="nav-item"*ngIf="authService.isLoggedIn()">
+          <a class="rounded-button " href="#" [routerLink]="['/add-book']">Dodaj książkę</a>
+        </li>
+      </ul>
+      <div class="d-flex">
+        <div class="d-flex" *ngIf="!authService.isLoggedIn()">
+          <a class="rounded-button" href="#" [routerLink]="['/login']">Zaloguj się</a>
+          <a class="rounded-button" href="#" [routerLink]="['/signup']">Zarejestruj się</a>
+        </div>
+        <div *ngIf="authService.isLoggedIn()" class="log-info">Zalogowano jako <span style="font-weight: bold">{{authService.getLogin()}}</span></div>
+        <button *ngIf="authService.isLoggedIn()" class="rounded-button" (click)="signOut()">Wyloguj się</button>
+      </div>
+    </div>
+  </div>
+</nav>
+

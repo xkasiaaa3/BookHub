@@ -1,0 +1,36 @@
+<div style="background-color: #c9ec5f; min-height:100vh; align-items: center;padding:100px;padding-top:30px;display: flex;flex-direction: column;">
+
+  <h1 class="entry-title"><span>Dodaj książkę</span></h1><hr>
+  <form (submit)="onSubmit()">
+    <div class="form-group">
+      <label class="label" for="title">Tytuł:</label>
+      <input type="text" class="form-control margin" id="title" name="title" required [(ngModel)]="editBook.title">
+    </div>
+
+    <div class="form-group ">
+      <label class="label" for="author">Autor:</label>
+      <input type="text" class="form-control margin" id="author" name="author" required [(ngModel)]="editBook.author">
+    </div>
+
+    <div class="form-group">
+      <label class="label" for="description">Opis:</label>
+      <textarea class="form-control margin" style="height: 250px"id="description" name="description" required [(ngModel)]="editBook.description"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label class="label" for="cover">Okładka (URL):</label>
+      <input type="text" class="form-control margin" id="cover" name="cover" required [(ngModel)]="editBook.cover">
+    </div>
+
+    <div class="form-group">
+      <label class="label">Gatunki (maksymalnie 3):</label>
+      <div style="display: flex; flex-wrap: wrap">
+        <div class="form-check margin" *ngFor="let genre of defaultGenres">
+          <input class="form-check-input" type="checkbox" [name]="genre" [value]="genre" (change)="onGenreChange($event, genre)">
+          <label class="form-check-label">{{ genre }}</label>
+        </div>
+      </div></div>
+
+    <button type="submit" (click)="onSubmit()"class="rounded-button">Zapisz zmiany</button><button (click)="deleteBook()"class="rounded-button">Usuń książkę</button>
+  </form>
+</div>

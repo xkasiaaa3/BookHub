@@ -1,8 +1,23 @@
-<search-bar-title (title)="getTitle($event)">
-</search-bar-title>
-<search-bar-author (author)="getAuthor($event)">
-</search-bar-author>
+<div style="background-color: #c9ec5f;flex-direction: row;display: flex;min-height:100vh">
+<div style="width:80%">
 <all-books [filterTitle]="filterTitle" [filterAuthor]="filterAuthor">
-</all-books>
+</all-books></div>
+  <div style="width:20%; height:40vh;margin:20px;background-color: #d6ec93;justify-content: center" class="card">
+    <div style="padding:20px;">
+      <div class="title">Znajdź książkę</div>
 
+    <div> <label class="label">Autor:</label>
+
+    <search-bar-author (filterChange)="updateFilter($event)"class="margin"></search-bar-author>
+    </div>
+<div>
+      <label class="label">Tytuł:</label>
+
+      <search-bar-title (filterChange)="updateFilter($event)" class="margin"></search-bar-title>
+
+
+    </div>
+
+    </div></div>
+</div>
 

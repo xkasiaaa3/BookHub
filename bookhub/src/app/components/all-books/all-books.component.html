@@ -1,5 +1,6 @@
-
+<div class="grid-container">
 <div *ngFor="let item of items$ | filterTitle:filterTitle | filterAuthor:filterAuthor">
-  <book-item [cover]="item.cover" [author]="item.author" [title]="item.title" [description]="item.description" [id]="item.id">
+  <book-item [cover]="item.cover" [genres]="item.genres" [author]="item.author" [title]="item.title" [description]="item.description" [id]="item.id">
   </book-item>
+</div>
 </div>
