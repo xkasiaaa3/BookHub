@@ -35,5 +35,20 @@ const bookEndpoint = (router) => {
       console.log(error);
     }
   });
+
+  router.delete("/api/book/:id", async (req, res) => {
+    const { id } = req.params;
+    try {
+      const result = await business.getBookManager().remove(id);
+      if (result) {
+        res.status(200).send("Book deleted successfully");
+      } else {
+        res.status(404).send("Book not found");
+      }
+    } catch (error) {
+      console.log(error);
+      res.status(500).send("An error occurred");
+    }
+  });
 };
 export default bookEndpoint;

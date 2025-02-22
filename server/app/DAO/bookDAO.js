@@ -47,10 +47,19 @@ async function createNewOrUpdate(data) {
   });
 }
 
+async function remove(id) {
+  return BookModel.findByIdAndRemove(id).then((result) => {
+    if (result) {
+      return mongoConverter(result);
+    }
+  });
+}
+
 export default {
   query: query,
   get: get,
   createNewOrUpdate: createNewOrUpdate,
+  remove: remove,
 
   model: BookModel,
 };
